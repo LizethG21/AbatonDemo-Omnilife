@@ -1,0 +1,35 @@
+mixin vpn(id,title,data)
+    .widget(id=id).col-md-4
+        div
+            div.head
+                .filters
+                    a(href="/dash/vpn")
+                        h5 VPN
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                table(style="width: 100%;")
+                    tr
+                        td
+                            h6 Disponibilidad
+                        td
+                            h4.countDecimalP 98.6%
+                        td
+                            span.green 1.6% &nearr;
+                hr(style="margin: 10px 0px;")
+                h6 Conexiones: 
+                h4(style="margin:0 15px;") 213
+                table(style="width:100%; text-align:center;")
+                    tr
+                        td
+                            canvas#chartvpn(style="margin:0;display:initial;width:250px;height:165px")
+                        td(style="text-align: initial;")
+                            .bullet(style="background-color:#3CBA9F;")
+                            p(style="font-size: 12px;") Actual
+                            br
+                            .bullet(style="background-color:#3E95CD;")
+                            p(style="font-size: 12px;") Disp
+    block scripts
+        script(src="/javascripts/demo/vpn.js")
+        script vpn();
+        script updatevpn();

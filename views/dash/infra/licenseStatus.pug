@@ -1,0 +1,62 @@
+mixin license()
+    div.widget.col-md-12
+        div
+            div.head(style="border-bottom:none;!important")
+                .filters
+                    h5 Licencias
+                    .sem.green
+    div.widget.col-md-12
+        div
+            div.head
+                .filters
+                    h5 Power Users
+                    .sem.green 
+                    img.close(src="/images/icon-btn-close.svg",style="margin:0!important")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table(style="width:100%;")
+                tr
+                    td
+                        canvas#chartcpu(style="width:100%; height: 150px; float: left")
+    div.widget.col-md-12
+        div
+            div.head
+                .filters
+                    h5 SIP Trunk
+                    .sem.green 
+                    img.close(src="/images/icon-btn-close.svg",style="margin:0!important")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table(style="width:100%;")
+                tr
+                    td
+                        canvas#chartdisk(style="width:100%; height: 150px; float: left")
+    div.widget.col-md-12
+        div
+            div.head
+                .filters
+                    h5 Voice Mail
+                    .sem.green 
+                    img.close(src="/images/icon-btn-close.svg",style="margin:0!important")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table(style="width:100%;")
+
+                tr
+                    td(rowspan=6)
+                        .rainbow-S-6(style="height: 180px;")
+                    td
+                        canvas#chartram(style="width:100%; height: 150px; float: left")
+    block scripts
+        script(src="/javascripts/demo/infra.js")
+        script cpu(); 
+        script update();

@@ -1,0 +1,38 @@
+mixin stealthwatch()
+    .widget.col-md-4
+        div
+            div.head
+                .filters    
+                    a(href="/dash/stealthwatch")
+                        h5 Stealthwatch
+                    .sem.red
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                table(style="width:100%;text-align: center;")
+                    tr
+                        th Alarma 
+                        th Repeticiones
+                    tr  
+                        td Concern index
+                        td.countInteger 7
+                    tr  
+                        td Target index
+                        td.countInteger 4
+                    tr  
+                        td DDoS target
+                        td.countInteger 2
+                    tr  
+                        td High Traffic
+                        td.countInteger 1
+                hr(style="margin:18px 0")
+                table(style="width:100%;")
+                    tr  
+                        td 
+                            h5 Alarmas
+                        td
+                            canvas#Stealthwatchbar(style="margin-top:0;width:250px;")
+
+    block scripts
+        script(src="/javascripts/demo/stealthwatch.js")
+        script chartstealthwatch();
+        script updatestealthwatch();

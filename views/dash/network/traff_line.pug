@@ -1,0 +1,12 @@
+mixin traff_line()
+     div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h4 Trafico de red
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            canvas#dashic_traf_line(style="width: 100%")

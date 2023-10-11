@@ -1,0 +1,37 @@
+extends ../layout
+include incident/main/slaLevel
+include incident/main/inventory
+include incident/main/calls
+include incident/main/incidentsClosed
+include incident/main/contacts
+include incident/main/incidentsSeverity
+include incident/main/incidentsDocumented
+include incident/main/incidentsSite
+include incident/main/incidentsDay
+include incident/main/incidentsReassigned
+include incident/main/agents
+
+
+block content
+    h1 Incidentes
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Inicio
+            li.breadcrumb-item Incidentes
+    .row#dash
+        +incidentsDay()
+        +slaLevel()
+        +incidentsSite()
+        +incidentsClosed()
+        +calls()
+        +incidentsDocumented()       
+        +inventory()
+        +incidentsSeverity()
+        +contacts()
+        +incidentsReassigned()
+        +agents()
+    br
+block scripts
+        script(src="/javascripts/main.js")
+        script update();

@@ -1,0 +1,44 @@
+mixin thousandEyes()
+    div.widget.col-md-4
+        div
+            div.head
+                .filters
+                    a(href="/dash/thousandEyes")
+                        h5 Thousand Eyes
+                    .sem.yellow
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                table(style="width: 100%;")
+                    tr
+                        td  
+                            h4 Jitter
+                        td  
+                            h3 1.5ms
+                        td(colspan="2")
+                            canvas(style="width:90%;height:95px")#w2
+                        td
+                            span.green 2.8%&nearr;
+                    tr
+                        td  
+                            h4(style="font-size:14px") Latency
+                        td   
+                            h3 3.6ms
+                        td(colspan="2")
+                            canvas(style="width:90%;height:94px")#w3
+                        td
+                            span.red -2.8%&searr;
+                    tr
+                        td  
+                            h4 Loss
+                        td   
+                            h3.countDecimalP 1.5%
+                        td(colspan="2")
+                            canvas(style="width:90%;height:94px")#w4
+                        td
+                            span.green 3.6%&nearr;               
+    block scripts                     
+        script(src="/javascripts/dash/main/w2.js")
+        script w2("w2"); w2("w3"); w2("w4");
+        script updatew2Line("w2");updatew2Line("w3");updatew2Line("w4");
+                    
+                    

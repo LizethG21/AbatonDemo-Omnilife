@@ -1,0 +1,59 @@
+extends ../layout
+
+
+block content
+    h1 Créditos
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Inicio
+            li.breadcrumb-item Créditos
+    .row#dash
+        .col-md-12.widget
+            div
+                .head
+                    .filters
+                        h5 Criterios para ofrecer crédito
+                        img.close(src="/images/icon-btn-close.svg")
+                table(style="width:100%;")
+                    tr
+                        td
+                            h2 Periodo 
+                        td 
+                            section.range-slider
+                                span.rangeValues
+                                input(value="1", min="1", max="12", step="1", type="range")
+                                input(value="12", min="1", max="12", step="1", type="range")
+                    tr  
+                        td
+                            h2 Tráfico total 
+                        td 
+                            section.range-slider
+                                span.rangeValues
+                                input(value="1", min="1", max="12", step="1", type="range")
+                                input(value="12", min="1", max="12", step="1", type="range")
+                        td
+                            h2 Promedio
+                        td 
+                            section.range-slider
+                                span.rangeValues
+                                input(value="1", min="1", max="12", step="1", type="range")
+                                input(value="12", min="1", max="12", step="1", type="range")
+                        td
+                            h2 Constancia
+                        td 
+                            section.range-slider
+                                span.rangeValues
+                                input(value="1", min="1", max="12", step="1", type="range")
+                                input(value="12", min="1", max="12", step="1", type="range")
+                    
+                
+    
+
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")
+    script(src="/javascripts/creditos.js") 

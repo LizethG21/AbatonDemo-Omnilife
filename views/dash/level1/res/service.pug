@@ -1,0 +1,35 @@
+mixin service()
+    div.widget.col-md-6#service
+        div
+            div.head
+                .filters
+                    h4 Nivel de servicio 
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            div(style="width:100%;display:flex; margin: 3% 12% 6.5% 12%;")
+                .valor
+                    div 
+                        h4.countIntegerP 98%
+                        h6 Actual
+                .valor
+                    div 
+                        h4.countIntegerP 97%
+                        h6 Promedio
+                .valor
+                    div(style="width: 140px; height:140px; background-color: white; border-radius: 90px; margin: 20px;")
+                    div.serviceLevel(style="position: absolute; z-index: 1")
+            div.benchmark
+                table(style="width: 100%")
+                    tr
+                        td.countInteger 0
+                        td.countDecimalP(style="text-align: right") 100%
+                    tr
+                        td.barPercent(colspan=2)
+                            .bar#nodesPercent(style="width: 98%")
+    block scripts
+    script(src="/javascripts/dash/service.js")
+    script service()

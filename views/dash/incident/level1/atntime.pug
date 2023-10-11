@@ -1,0 +1,26 @@
+mixin atntime(id,title,data,regionId)
+    div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h5 Tiempo de Atención
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                tr
+                    td
+                        canvas#chartLineResolve(style="margin-top: 20px" width="550" height="200")
+            table(style="width:100%; font-size: 12px;text-align:center;")
+                tr
+                    td(style="vertical-align: middle")
+                        .bullet.lightIn(style="margin: 0px 20px 0 10px;")
+                        h6(style="margin:0") Promedio
+                    td(style="font-size: 24px; font-weight: 800;")
+                        //- h3#percentLine #{fmt(data.percent)}
+    block scripts
+        script(src="/javascripts/dash/atentiontime.js")
+        script chartAtnTimeTimeline();
+        script updateChartAtnTimeTimeline();

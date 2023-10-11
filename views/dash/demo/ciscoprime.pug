@@ -1,0 +1,51 @@
+mixin ciscoprime(id,title,data)
+    .widget(id=id).col-md-4
+        div
+            div.head
+                .filters
+                    a(href="/dash/ciscoprime")
+                        h5 Cisco Prime
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                h6 Total access point: 
+                h4(style="margin:0 15px;") 265
+                table(style="width:100%; text-align:center;")
+                    tr
+                        td
+                            canvas#chartIncidentSeverity(style="margin:0;width:150px")
+                        td(style="text-align: initial;")
+                            .bullet(style="background-color:#3CBA9F;")
+                            p Ok 99%
+                            br
+                            .bullet(style="background-color:#3E95CD;")
+                            p Service 0.9%
+                            br
+                            .bullet(style="background-color:#C45850;")
+                            p Error 0.1%
+                hr(style="margin: 25px 10px;")
+                table(style="width: 100%;")
+                    tr
+                        td
+                            h6 Disponibilidad
+                        td
+                            h4.countDecimalP 99.8%
+                        td
+                            span.green 0.8% &nearr;
+                    tr 
+                        td
+                            h6 Tiempo activo
+                        td
+                            h4.countInteger 235 
+                            span h
+                        td    
+                            span.green 15.2% &nearr;
+                    tr 
+                        td
+                            h6 Próximo mantenimiento
+                        td
+                            h5 24/02/2022
+    block scripts
+        script(src="/javascripts/demo/ciscoprime.js")
+        script chartIncidentSeverity();
+        script updateChartIncidentSeverity();

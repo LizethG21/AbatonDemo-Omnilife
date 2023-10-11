@@ -1,0 +1,19 @@
+.widget.metric {
+    table {
+        margin: 5px 0;
+        .legend {
+            text-align: center;
+        }
+    }
+    .metric {
+        font-size: 36px;
+        text-align: center;
+    }
+    .neutral {
+        font-size: 10px;
+        text-align: center;
+    }
+    .neutral {
+        color: lightgray;
+    }
+}

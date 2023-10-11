@@ -1,0 +1,22 @@
+extends ../../layout
+include res/service
+include ../ciscoprime/accesspoint
+
+block content
+    h1 Cisco Prime
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Dashboard
+            li.breadcrumb-item Cisco Prime
+    .row#dash
+        +service()
+        +accesspoint()
+        
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")

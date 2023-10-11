@@ -1,0 +1,30 @@
+mixin health(id,title,data,regionId)
+    div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h5 Network Health
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                tr
+                    td(rowspan=6)
+                        .rainbow-N-6(style="height: 200px")
+                    td
+                        canvas#charthealth(style="margin-top: 20px" width="550" height="200")
+            table(style="width:100%; font-size: 12px;text-align:center;")
+                tr
+                    td(style="vertical-align: middle")
+                        .bullet.lightOut(style="margin: 0px 20px 0 10px;")
+                        h5(style="margin:0") Actual&nbsp;
+                        h3#health
+                    td
+                        h4.green 2% &nearr;
+    block scripts
+        script(src="/javascripts/demo/dna.js")
+        script charthealth();
+        script updatecharthealth();

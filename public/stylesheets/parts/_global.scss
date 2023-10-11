@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+
+    background: $BACK1; /* Old browsers */
+    background: -moz-linear-gradient(
+        top,
+        $BACK1 0%,
+        $BACK2 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        top,
+        $BACK1 0%,
+        $BACK2 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        $BACK1 0%,
+        $BACK2 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    font: 14px "Tahoma", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+a:hover {
+    color: #ffffff;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0px;
+    font-size: 36px;
+    margin-bottom: -10px;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: #fff;
+    display: inline-block;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 18px;
+}
+h6 {
+    margin-left: 5%;
+    font-size: 14px;
+}
+p {
+    margin: 0;
+}
+hr {
+    color: #ffffff;
+}
+ul li {
+    list-style-type: none;
+    margin: 5% 0;
+}
+
+i,
+span {
+    display: inline-block;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}

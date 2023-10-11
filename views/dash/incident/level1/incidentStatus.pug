@@ -1,0 +1,23 @@
+mixin incidentStatus(id,title,data)
+    .widget(id=id).col-md-6
+        div
+            div.head
+                .filters
+                    h5 Estado Incidentes
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                tr
+                    td
+                        canvas#chartIncidentActualStatus(width=150 height=60 style="margin-top: 10px")
+                tr
+                    td#dataIncidentActualStatus
+
+    block scripts
+        script(src="/javascripts/dash/incidentStatus.js")
+        script chartIncidentActualStatus();
+        script updateChartIncidentActualStatus();
+

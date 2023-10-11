@@ -1,0 +1,26 @@
+extends ../../layout
+include ../thousandeyes/teyes
+include ../thousandeyes/teyes2
+include ../thousandeyes/teyes3
+include res/service
+
+block content
+    h1 ThousandEyes
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Dashboard
+            li.breadcrumb-item ThousandEyes
+    .row#dash
+        +service()
+        +teyes()
+        +teyes2()
+        +teyes3()
+        
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")

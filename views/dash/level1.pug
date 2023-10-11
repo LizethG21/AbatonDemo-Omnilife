@@ -1,0 +1,40 @@
+extends ../layout
+include incident/level1/abandon
+include incident/level1/incident
+include incident/level1/atntime
+include incident/level1/service
+include incident/level1/inventory
+include incident/level1/incidentFirstContact
+include incident/level1/incidentDocumented
+include incident/level1/top_incident
+include incident/level1/incidentSeverity
+include incident/level1/incidentStatus
+include incident/level1/incidentType
+include incident/main/incidentsTop10Agents
+include incident/main/incidentsTop10Types
+
+block content
+    h1 Incidentes
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Inicio
+            li.breadcrumb-item Incidentes
+    .row#dash
+        +abandon()
+        +atntime()
+        +service()
+        +inventory()
+        +incidents()
+        +incidentsTop10Agents()
+        +incidentsTop10Types()
+        +incidentFirstContact()
+        +incidentDocumented()
+        +topIncident()
+        +incidentSeverity()
+        +incidentStatus()
+        +incidentType()
+        
+    br
+block scripts
+    script(src="/javascripts/main.js")

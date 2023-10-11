@@ -1,0 +1,24 @@
+extends ../../layout
+include res/service
+include ../vpn/radarvpn
+include ../vpn/licencias
+
+block content
+    h1 VPN
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Dashboard
+            li.breadcrumb-item VPN
+    .row#dash
+        +service()
+        +radarvpn()
+        +licencias()
+        
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")

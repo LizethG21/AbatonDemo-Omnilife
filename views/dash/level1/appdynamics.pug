@@ -1,0 +1,29 @@
+extends ../../layout
+include res/service
+include ../appDynamics/apps
+include ../appDynamics/servers
+include ../appDynamics/eventos
+
+
+block content
+    h1 AppDynamics
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Dashboard
+            li.breadcrumb-item AppDynamics
+    .row#dash
+        //- +service()
+        +eventos()
+        +apps()
+        +servers()
+        
+        
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")
+    script loopDash();

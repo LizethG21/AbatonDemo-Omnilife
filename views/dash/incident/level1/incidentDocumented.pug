@@ -1,0 +1,29 @@
+mixin incidentDocumented()
+    .widget.col-md-6
+        div
+            div.head
+                .filters
+                    h5 Incidentes documentados correctamente
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                tr
+                    td
+                        canvas#chartIncidentDocumented(style="padding: 10px 80px;" width=400 height=200)
+            br
+            table(style="width:100%; font-size: 12px; text-align:center;")
+                tr
+                    td(style="vertical-align: middle")
+                        .bullet.lightIn.lightIn2(style="margin: 0px 20px 0 10px;")
+                        h6(style="margin:0") Documentados
+                        .bullet.lightOut.lightOut2(style="margin: 0px 20px 0 10px;")
+                        h6(style="margin:0") Sin documentar
+                    td(style="font-size: 24px; font-weight: 800;")
+    block scripts
+        script(src="/javascripts/dash/IncidentDocumented.js")
+        script IncidentDocumented();
+        script updateIncidentDocumented();
+        

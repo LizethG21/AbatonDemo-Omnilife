@@ -1,0 +1,27 @@
+mixin eventos(id,title,data,regionId)
+    .col-md-12.widget
+        div
+            .head
+                .filters
+                    h5 Detalles de eventos de seguridad
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table.table.table-dark.table-striped(style="width:100%;")
+                tr
+                    table#tableEvents.text-center(style="width:100%;margin-top:2%;margin-bottom:2%")
+                        thead
+                            th First Active
+                            th Source Host Groups
+                            th Source Host
+                            th Target Host Groups
+                            th Target Hosts
+                            th Concern Index
+                            th Security Events
+                        tbody
+            
+   
+                

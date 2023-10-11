@@ -1,0 +1,40 @@
+extends ../../layout
+include ../vmware/wg_cpuesx
+include ../vmware/wg_ramesx
+include ../vmware/wg_diskesx
+include ../vmware/wg_cpuvmesx
+include ../vmware/wg_ramvmesx
+include ../vmware/wg_dstypes
+include ../vmware/wg_dsnames
+include ../vmware/wg_dsnamesn
+include ../vmware/wg_dsos
+
+
+block content
+    h1 VMware
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/dash/main") Dashboard
+            li.breadcrumb-item VMware
+    .row#dash
+        +wg_cpuesx("ESXi-HX-COR-N2 Cpu")
+        +wg_dsnamesn("Redes de máquina virtual") 
+        +wg_dsnames("Tipos de datos usados")
+        +wg_ramesx("ESXi-HX-COR-N2 Ram") 
+        +wg_dsos("Distribución de S.O.") 
+        +wg_diskesx("ESXi-HX-COR-N2 Disco") 
+        +wg_cpuvmesx("Cpu máquina virtual Vsphere")   
+        +wg_dstypes("Tipos de datos")    
+        +wg_ramvmesx("Ram máquina virtual Vsphere")   
+        
+          
+
+        
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")

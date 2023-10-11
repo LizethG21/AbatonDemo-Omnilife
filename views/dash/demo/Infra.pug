@@ -1,0 +1,118 @@
+mixin infra()
+        div.widget.col-md-12#service
+            div
+                div.head
+                    .filters
+                        a(href="/dash/infra")
+                            h5 Infraestructura
+                        img.close(src="/images/icon-btn-close.svg")
+                table.semaphores
+                    tbody
+                        tr
+                            td
+                                .big.green
+                                    i.fa.fa-server
+                                | Servidores
+                                td(title IPOSE)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red.on
+                                            .yellow
+                                            .green
+                                    a(href="/dash/wire/h/") IPOSE
+                                td(title EMS)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") EMS
+                                td(title ACCS)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") ACCS
+                                td(title Mon2)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") Mon2
+                table.semaphores
+                    tbody
+                        tr
+                            td
+                                .big.green
+                                    i.fa.fa-server
+                                | Disponibilidad
+                                td(title IPOSE)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red.on
+                                            .yellow
+                                            .green
+                                    a(href="/dash/wire/h/") IPOSE
+                                td(title EMS)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") EMS
+                                td(title ACCS)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") ACCS
+                                td(title Mon2)
+                                    .signal.server
+                                        a(href="/dash/wire/h/")
+                                            .red
+                                            .yellow
+                                            .green.on
+                                    a(href="/dash/wire/h/") Mon2
+                a(href="/dash/wire/t")
+                    table.semaphores
+                        tbody
+                            tr
+                                td
+                                    .big.green
+                                        i.fa.fa-volume-control-phone
+                                    | Troncales
+                                td
+                                    .signal2
+                                        -for(let i=0;i<60;i++)
+                                            .gray(id=i)
+
+                                td
+                                    canvas#trunk(height=70 width=300 style="margin-left: 0px")
+                table.semaphores
+                    tbody
+                        tr
+                            td
+                                .big.green
+                                    i.fa.fa-laptop
+                                | VPN
+                            td
+                                .signal
+                                    .red
+                                    .yellow
+                                    .green.on
+                                | CREO
+                            td
+                                canvas#vpn(height=70 width=250)
+                table.semaphores
+                    tbody
+                        tr
+                            td
+                                .big.green
+                                    i.fa.fa-file-audio-o
+                                | VoiceMail
+                            td
+                                canvas#voiceBar(height=70 width=250 style="margin-top:0;width:250px;margin-left:5%;")
+                                //canvas#voiceBar(height=70 width=200)

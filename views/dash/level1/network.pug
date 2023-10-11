@@ -1,0 +1,24 @@
+extends ../../layout
+include res/service
+include ../network/traff_line
+include ../network/devices
+
+
+block content
+    h1 Red
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Dashboard
+            li.breadcrumb-item Network
+    .row#dash
+        +traff_line()
+        +devices()
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/demo/network.js")
+    script loopDash();
+    script devices();

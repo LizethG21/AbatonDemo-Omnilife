@@ -1,0 +1,27 @@
+mixin devices(id,title)
+    div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h4 Dispositivos de red
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                br
+                tr
+                    h4 Dispositivos totales: 386&nbsp
+                    h5.green 1.2% &nearr;
+                tr
+                    td(rowspan=6)
+                        .rainbow-S-6(style="height: 250px")
+                    td.text-center
+                        canvas#chartdevices(style="margin-top: 10px;width:350px;height:250px;")
+                    td(style="text-align: initial;")#datadevices
+    block scripts
+        script(src="/javascripts/demo/dna.js")
+        script chartdevices();
+        script updatecharthealth();

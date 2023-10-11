@@ -1,0 +1,54 @@
+mixin vmware()
+    div.widget.col-md-4
+        div
+            div.head
+                .filters
+                    a(href="/dash/vmware")
+                        h5 VMware
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                table(style="width: 100%;")
+                    tr
+                        td
+                            h6 Servidores
+                        td(colspan="2")
+                            canvas(style="width:90%;height:63px")#server
+                        td
+                            h4.countIntegerP 100%
+                        td
+                            span.green 5% &nearr;
+                    tr
+                        td  
+                            h6 CPU
+                        td(colspan="2")
+                            canvas(style="width:90%;height:63px")#cpu
+                        td
+                            h4.countIntegerP 2%
+                        td
+                            span.green 1% &nearr;
+                    tr 
+                        td
+                            h6 RAM
+                        td(colspan="2")
+                            canvas(style="width:90%;height:63px")#ram
+                        td
+                            h4.countIntegerP 54%
+                        td
+                            span.green 23% &nearr;
+                    tr
+                        td
+                            h6 Disco
+                        td(colspan="2")
+                            canvas(style="width:90%;height:63px")#disco
+                        td
+                            h4.countIntegerP 63%
+                        td
+                            span.red 0.1% &searr;
+    block scripts
+        script(src="/javascripts/demo/vmware.js")
+        script widget("server","#3e95cd"); widget("cpu","#c45850");widget("ram","#3CBA9F");widget("disco","#7262BB");
+        script updatewidgetLine("server");updatewidgetLine("cpu");updatewidgetLine("ram");updatewidgetLine("disco");
+                    
+                    
+                    

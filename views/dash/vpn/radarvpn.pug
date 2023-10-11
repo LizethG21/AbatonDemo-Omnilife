@@ -1,0 +1,26 @@
+mixin radarvpn(id,title,data,regionId)
+    div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h5 Conexiones VPN
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%; text-align:center;")
+                br
+                tr
+                    h4 Conexiones totales: 130&nbsp
+                    h5.red 0.3% &searr;
+                tr
+                    td
+                        canvas#chartvpn(style="margin:0;display:initial;")
+                    td(style="text-align: initial;")#datas
+    block scripts
+        script(src="/javascripts/demo/vpn.js")
+        script vpnbar();
+        script updatevpn2();
+                

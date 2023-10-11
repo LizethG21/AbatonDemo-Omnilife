@@ -1,0 +1,26 @@
+mixin licenses(id,title)
+    div.widget.col-md-6
+        div
+            div.head
+                .filters
+                    h4 Licencias Cisco DNA
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                br
+                tr
+                    h4 Licencias totales: 403&nbsp
+                    h5.green 6% &nearr;
+                tr
+                    td(style="text-align: initial;")#datalicenses
+                    td.text-center
+                        canvas#chartlicenses(style="margin-top: 10px;width:300px;height:250px;")
+                    
+    block scripts
+        script(src="/javascripts/demo/dna.js")
+        script chartlicenses();
+        script updatecharthealth();

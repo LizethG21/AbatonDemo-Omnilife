@@ -1,0 +1,25 @@
+mixin wg_dsnames(title)  
+    div.widget#widgetdatastoreNames(style="width:48%;")
+        div
+            div.head
+                .filters
+                    h5= title 
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg",style="margin:0!important")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            table(style="width:100%;")
+                br
+                tr
+                    h4 Servidores totales: 174&nbsp
+                    h5.green 2% &nearr;
+                tr
+                    td.text-center
+                        canvas#chartdatastoreName(style="margin-top: 10px;width:300px;height:218px;")
+                    td(style="text-align: initial;")#chartdatastoreNamedata
+    block scripts
+        script(src="/javascripts/demo/vmware.js")
+        script circle(); 
+        script update();

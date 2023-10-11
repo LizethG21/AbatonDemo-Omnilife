@@ -1,0 +1,59 @@
+mixin dna(id,title,data)
+    .widget(id=id).col-md-4
+        div
+            div.head
+                .filters
+                    a(href="/dash/dna")
+                        h5 DNA Center
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                h6 Dispositivos de red: 
+                h4.countDecimalP(style="margin:0 15px;") 98.9%
+                table(style="width:100%; text-align:center;")
+                    tr
+                        td
+                            canvas#chartdna(style="margin:0;width:150px")
+                        td(style="text-align: initial;")
+                            .bullet(style="background-color:#3cba9f;")
+                            p Healthy
+                            br
+                            .bullet(style="background-color:#e8c3b9;")
+                            p Unhealthy
+                            br
+                            .bullet(style="background-color:#c45850;")
+                            p Unmonitored
+                hr(style="margin: 25px 10px;")
+                table(style="width: 100%;")
+                    tr
+                        td
+                            h6 Total de dispositivos
+                        td
+                            h4.countInteger 230
+                        td
+                            span.green 0.8% &nearr;
+                    tr 
+                        td
+                            h6 Healthy
+                        td
+                            h4.countInteger 216 
+                        td    
+                            span.green 15.2% &nearr;
+                    tr 
+                        td
+                            h6 Unhealthy
+                        td
+                            h5 10
+                        td    
+                            span.green 1% &nearr;
+                    tr 
+                        td
+                            h6 Unmonitored
+                        td
+                            h5 4
+                        td    
+                            span.green 0.2% &nearr;
+    block scripts
+        script(src="/javascripts/demo/dna.js")
+        script chartdna();
+        script updatechartdna();

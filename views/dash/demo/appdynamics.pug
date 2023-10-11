@@ -1,0 +1,65 @@
+mixin appdynamics()
+    .widget(id=id).col-md-4.percent
+        div
+            div.head
+                .filters
+                    a(href="/dash/appdynamics")
+                        h5 AppDynamics
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg")
+            div.body
+                table(style="width:100%; text-align:center;")
+                    tr
+                        td  
+                            h5 Aplicaciones
+                        td  
+                            h5 Servidores 
+                    tr
+                        td.metric.countDecimalP
+                            = 99
+                            span.neutralPercent %
+                        td.metric.countDecimalP
+                            = 99
+                            span.neutralPercent %
+                    tr
+                        td.good.countInteger 1520
+                        td.good.countInteger 35
+                    tr
+                        td.bad.countInteger 12
+                        td.bad.countInteger 1
+                    tr
+                        td.neutral.countDecimalPDelta
+                            p &#9650;1%
+                        td.neutral.countDecimalPDelta
+                            p &#9650;2%
+                hr(style="margin:21px 0")
+                table(style="width:100%;text-align: center;")
+                    tr
+                        th #ID 
+                        th Servicio
+                        th Uso
+                    tr  
+                        td #3652
+                        td Cliente DNS
+                        td.countIntegerP 23%
+                    tr  
+                        td #1847
+                        td MySQL
+                        td.countIntegerP 21%
+                    tr  
+                        td #2658
+                        td Remote Desktop
+                        td.countIntegerP 18%
+                    tr  
+                        td #7845
+                        td SmartNet
+                        td.countIntegerP 10%
+                    tr  
+                        td #7845
+                        td ThousandEyes
+                        td.countIntegerP 5%
+                    
+    block scripts
+        script(src="/javascripts/demo/appdynamics.js")
+        script topapps();
+        script updatetopapps();

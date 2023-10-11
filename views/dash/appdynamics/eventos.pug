@@ -1,0 +1,26 @@
+mixin eventos(id,title,data,regionId)
+    .col-md-12.widget
+        div
+            .head
+                .filters
+                    h5 Top transacciones
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table#tableEvents.text-center(style="width:100%;margin-top:2%;margin-bottom:2%")
+                thead
+                    th Nombre
+                    th Salud
+                    th Tiempo de respuesta(ms)
+                    th Llamadas por minuto
+                    th Errores por minuto
+                    th % de errores
+                    th % de transacciones lentas 
+                    th % de transacciones muy lentas
+                tbody
+            
+   
+                

@@ -1,0 +1,11 @@
+mixin cha(code, name, bits)
+    .widget.col-6
+        div
+            .filters
+                .head
+                    .title
+                        a(href="t/" + code)
+                            H5=name
+                .container
+                    .row
+                        canvas(id="chartTransTotal"+code, style="margin-top: 5%;height: 150px;display: inline-block;")

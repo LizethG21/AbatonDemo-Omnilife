@@ -1,0 +1,35 @@
+mixin wg_ramvmesx(title)
+    div.widget#widgetramvm(style="width:48%;")
+        div
+            div.head
+                .filters
+                    h5= title 
+                    .sem.green
+                    img.close(src="/images/icon-btn-close.svg",style="margin:0!important")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            table(style="width:100%;")
+                tr
+                    h4 Uso promedio: 65%&nbsp
+                    h5.green 8.3% &nearr;
+                tr
+                    td(rowspan=6)
+                        .rainbow-S-6(style="height: 180px;")
+                    td
+                        canvas#chartramvm(width=420 height=180 style="margin-top: 10px;width:500px;height:180px;")
+            table(style="width:100%; font-size: 12px;")
+                tr
+                    td(style="vertical-align: middle")
+                        .bullet(style="background-color:#3e95cd")
+                        h6 Usado
+                        .bullet(style="background-color:#8e5ea2")
+                        h6 Total
+                    td(style="vertical-align: middle")
+                        h3 63%
+    block scripts
+        script(src="/javascripts/demo/vmware.js")
+        script cpu(); 
+        script update();

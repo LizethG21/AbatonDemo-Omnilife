@@ -1,0 +1,32 @@
+mixin incidents(id,title,data,regionId)
+    .widget.col-md-12
+        div
+            div.head
+                .filters
+                    h5 Reporte de incidentes
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            br
+            .row
+                .col-md-4
+                    canvas#chartIncidentCategory(style="margin-top: 10px")
+                .col-md-4
+                    canvas#chartIncidentSolver(style="margin-top: 10px")
+                .col-md-4
+                    canvas#chartIncidentStatus(style="margin-top: 10px")
+            .row
+                .col-md-4
+                    div#datachartIncidentCategory
+                .col-md-4
+                    div#datachartIncidentSolver
+                .col-md-4
+                    div#datachartIncidentStatus
+
+
+    block scripts
+        script(src="/javascripts/dash/incident.js")
+        script chartIncidentCategory();
+        script updateCharts();

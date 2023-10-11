@@ -1,0 +1,38 @@
+extends ../layout
+include demo/thousandEyes
+include demo/ciscoprime
+include demo/vmware
+include demo/stealthwatch
+include demo/appdynamics
+include demo/vpn
+include demo/dna
+include demo/parts/_cha
+include demo/google
+include demo/teams
+include demo/vpnline
+include demo/webex
+include demo/network
+include demo/infra
+
+block content
+    h1 Dashboard
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/") Inicio
+            li.breadcrumb-item Dashboard
+    .row#dash
+        //- -for (let widget of widgets)
+        //-     +#{widget}()
+        +vpn()
+        +vmware()
+        +network()
+        +infra()
+        
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")
+    script loopDash();
