@@ -4690,9 +4690,9 @@ router.post("/incident", async (req, res) => {
 
     res.json(data);
 });
-/*router.get("/infra", async (req, res) => {
+router.get("/infra", async (req, res) => {
     res.render("dash/level1/infra");
-});*/
+});
 
 router.get("/level1", async (req, res) => {
     //TODO: datos, si se van a renderear del lado del servidor

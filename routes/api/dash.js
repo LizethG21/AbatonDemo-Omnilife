@@ -12,7 +12,7 @@ router.use("/vmware", require("./demo/vmware"));
 router.use("/ciscoprime", require("./demo/ciscoprime"));
 router.use("/vpn", require("./demo/vpn"));
 router.use("/dna", require("./demo/dna"));
-/*router.use("/infra", require("./demo/infra"));*/
+router.use("/infra", require("./demo/infra"));
 
 
 //incident
